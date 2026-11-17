@@ -1,0 +1,15 @@
+# Configuracao do Bandit para a verificacao de seguranca do plugins.qgis.org.
+# Marca apenas falsos alarmes conhecidos deste plugin, com o motivo de cada um.
+[bandit]
+# ext_libs: biblioteca XlsxWriter 3.2.9 (BSD-2) copiada sem mudanca de codigo, usada so para gravar
+# a planilha .xlsx do Quadro de Areas. As linhas que o Bandit confunde com senha (B105/B107: senha
+# opcional vazia da protecao de planilha e textos "token" de formula) tambem levam "# nosec".
+exclude = ext_libs,*/ext_libs/*
+# B101: assert so nos arquivos testes_*.py, rodados a mao no Console Python do QGIS.
+# B110/B112: try/except que ignora de proposito falhas de itens opcionais (interface, estilo,
+#            camadas que o usuario fechou) para nao travar o QGIS; o resultado principal e conferido.
+# B310: urlopen e so o plano B quando a rede do QGIS nao responde, sempre no endereco https fixo
+#       do SIGA (SEMAD-GO).
+# B314/B405: xml.etree so le, nos testes, a planilha .xlsx gerada pelo proprio plugin.
+# B603: abre o Explorador do Windows no video escolhido (argumentos fixos, sem shell).
+skips = B101,B110,B112,B310,B314,B405,B603

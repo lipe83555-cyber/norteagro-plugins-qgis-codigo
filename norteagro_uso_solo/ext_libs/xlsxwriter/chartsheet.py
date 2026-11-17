@@ -58,7 +58,7 @@ class Chartsheet(worksheet.Worksheet):
         self.charts.append([0, 0, chart, 0, 0, 1, 1])
         return chart
 
-    def protect(
+    def protect(  # nosec B107  # falso alarme: senha opcional vazia da protecao de planilha do Excel, nao e senha gravada
         self, password: str = "", options: Optional[Dict[str, Any]] = None
     ) -> None:
         """
@@ -96,7 +96,7 @@ class Chartsheet(worksheet.Worksheet):
 
         # If objects and content are both off then the chartsheet isn't
         # protected, unless it has a password.
-        if password == "" and copy["objects"] and not copy["content"]:
+        if password == "" and copy["objects"] and not copy["content"]:  # nosec B105  # falso alarme: so testa se a senha opcional foi informada, nao e senha gravada
             return
 
         if self.chart:

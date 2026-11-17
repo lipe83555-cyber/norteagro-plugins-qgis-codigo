@@ -432,7 +432,7 @@ class Worksheet(xmlwriter.XMLwriter):
     # Utility function for writing different types of strings.
     def _write_token_as_string(self, token, row: int, col: int, *args):
         # Map the data to the appropriate write_*() method.
-        if token == "":
+        if token == "":  # nosec B105  # falso alarme: comparacao/valor de texto da planilha (token = pedaco de formula/celula), nao e senha
             return self._write_blank(row, col, *args)
 
         if self.strings_to_formulas and token.startswith("="):
@@ -1415,7 +1415,7 @@ class Worksheet(xmlwriter.XMLwriter):
                     # If previous token was a format just add the string.
                     fragments.append(token)
 
-                if token == "":
+                if token == "":  # nosec B105  # falso alarme: comparacao/valor de texto da planilha (token = pedaco de formula/celula), nao e senha
                     warn(
                         "Excel doesn't allow empty strings in rich strings. "
                         "Ignoring input in write_rich_string()."
@@ -4060,7 +4060,7 @@ class Worksheet(xmlwriter.XMLwriter):
         """
         self.tab_color = Color._from_value(color)
 
-    def protect(
+    def protect(  # nosec B107  # falso alarme: senha opcional vazia da protecao de planilha do Excel, nao e senha gravada
         self, password: str = "", options: Optional[Dict[str, Any]] = None
     ) -> None:
         """
@@ -4074,7 +4074,7 @@ class Worksheet(xmlwriter.XMLwriter):
             Nothing.
 
         """
-        if password != "":
+        if password != "":  # nosec B105  # falso alarme: so testa se a senha opcional foi informada, nao e senha gravada
             password = self._encode_password(password)
 
         if not options:
@@ -5206,16 +5206,16 @@ class Worksheet(xmlwriter.XMLwriter):
 
             # The operator should always be 2 (=) to flag a "simple" equality
             # in the binary record. Therefore we convert <> to =.
-            if token == "blanks":
+            if token == "blanks":  # nosec B105  # falso alarme: comparacao/valor de texto da planilha (token = pedaco de formula/celula), nao e senha
                 if operator == 5:
-                    token = " "
+                    token = " "  # nosec B105  # falso alarme: comparacao/valor de texto da planilha (token = pedaco de formula/celula), nao e senha
             else:
                 if operator == 5:
                     operator = 2
-                    token = "blanks"
+                    token = "blanks"  # nosec B105  # falso alarme: comparacao/valor de texto da planilha (token = pedaco de formula/celula), nao e senha
                 else:
                     operator = 5
-                    token = " "
+                    token = " "  # nosec B105  # falso alarme: comparacao/valor de texto da planilha (token = pedaco de formula/celula), nao e senha
 
         # if the string token contains an Excel match character then change the
         # operator type to indicate a non "simple" equality.

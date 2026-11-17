@@ -1,0 +1,11 @@
+# Configuracao do Bandit para a verificacao de seguranca do plugins.qgis.org.
+# Marca apenas falsos alarmes conhecidos deste plugin, com o motivo de cada um.
+[bandit]
+# B110/B112: try/except que ignora de proposito falhas de itens opcionais (interface, estilo,
+#            camadas que o usuario fechou) para nao travar o QGIS; o resultado principal e conferido.
+# B603/B607: processos com lista fixa de argumentos e sem shell: o Python do proprio QGIS para ler
+#            imagens/PDF em segundo plano (core/gdal_processo.py), taskkill/PowerShell do Windows para
+#            fechar esse processo quando trava, o Python de suporte que o usuario configurou para o OCR
+#            e o Explorador do Windows no video escolhido.
+# B314/B405: xml.etree so le o XML interno da planilha .xlsx do Quadro de Areas escolhida pelo usuario.
+skips = B110,B112,B314,B405,B603,B607

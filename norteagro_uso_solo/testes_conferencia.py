@@ -745,10 +745,6 @@ def _testar_casos_reais_v394(projeto):
     print("OK - v3.9.4: compensação x supressão, nomes sem acento/palavra a mais, RL relocada, camada sem SRC.")
 
 
-if __name__ == "__main__":
-    executar()
-
-
 def _testar_lugar_quadro_v396(projeto):
     """Camadas criadas com nome novo entram no quadro escolhido, sem dupla contagem."""
     idx = dict(indice_reconhecimento(projeto))
@@ -884,3 +880,7 @@ def executar():
         return _executar_tudo()
     finally:
         projeto.setDirty(estava)
+
+
+if __name__ == "__main__":
+    executar()
