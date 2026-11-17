@@ -1,0 +1,11 @@
+{
+  "senha": {
+    "sal": "b14fd272c38dfa4d93f4b06bb2148c4f",
+    "hash": "f45ffa9e5a93140eb9d36f7a183fb6fea908c784a0c556aaa16e0123d14699db"
+  },
+  "identificador": {
+    "sal": "0aa6f158953341bdff5ebe328b7eeb12",
+    "hash": "e162b831d66a1142d55f0f46ce92d00301cb725b7927cede4c381303b542d011"
+  },
+  "alterada": "14/11/2026 23:24"
+}

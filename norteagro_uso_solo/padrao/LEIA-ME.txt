@@ -1,0 +1,9 @@
+Padrão de fábrica do plugin (v0.2.0).
+
+- catalogo_extra.json: camadas extras (ex.: Murundus), camadas ocultas, nomes, apelidos e as cores padrão (estilos_padrao).
+- modelos_norteagro.json: modelos de pastas, temas de cores e tabela.
+
+Na primeira vez que o plugin abre, ele cria a pasta dados/ (ao lado desta) a partir destes arquivos.
+Tudo o que for adicionado no plugin (nomes, referências, camadas, cores, modelos, temas) é gravado em dados/.
+Uma cópia de segurança de dados/ fica no perfil do QGIS (pasta norteagro_uso_solo\copia_dados): ao atualizar
+ou reinstalar o plugin, os dados voltam sozinhos. Não depende mais do Google Drive.
