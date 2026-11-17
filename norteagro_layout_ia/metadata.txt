@@ -4,7 +4,6 @@ description=Land use and environmental liabilities map layouts for rural propert
 version=0.32.5
 qgisMinimumVersion=3.22
 qgisMaximumVersion=4.99
-supportsQt6=True
 author=Norte Agro Projetos
 email=atendimento@norteagroprojetos.com.br
 about=Norte Agro Projetos plugin that builds the Land Use map and the Environmental Liabilities map of a rural property in Brazil (CAR) from templates: it reads the CAR receipt and the property registry PDF locally, uses the area table produced by the "Norte Agro - Uso do Solo" plugin and generates the layout with legend, area tables, north arrow, scale, municipality location and the technical manager block (filled in Settings). Each map has its own layers, CRS and extent; variable texts use project variables (@na_*). Optional OCR for scanned documents uses a separate Python environment that the user installs (support folder). The user interface is in Brazilian Portuguese. | Plugin da Norte Agro Projetos que gera a Planta de Uso do Solo e a Planta de Passivos do imóvel a partir de modelos, lendo o recibo do CAR, a matrícula e o Quadro de Áreas do plugin "Norte Agro - Uso do Solo". O responsável técnico é preenchido em Configurações.
