@@ -560,7 +560,7 @@ Num projeto já configurado, <b>Aplicar neste projeto</b> cria só o que falta; 
 <p><code>from norteagro_uso_solo import testes_reconhecimento, testes_conferencia, testes_correcao, testes_interface</code><br>
 <code>testes_reconhecimento.main(); testes_conferencia.executar(); testes_correcao.executar(); testes_interface.executar(mostrar=False)</code></p>
 <p>Os testes usam catálogo e pastas temporários e devolvem o projeto aberto como estava. Todos devem terminar em OK.</p>
-<p>O histórico de mudanças e os detalhes técnicos estão no arquivo <code>README.md</code> dentro da pasta do plugin. Os vídeos da ajuda ficam em <code>videos</code> (lista em <code>videos.json</code>); o código da coluna de vídeos é <code>videos_ajuda.py</code>, igual nos dois plugins.</p>
+<p>O histórico de mudanças está em Complementos &gt; Gerenciar e instalar complementos &gt; este plugin (Changelog) e o código no repositório do plugin (link "Repositório de código" na mesma tela). Os vídeos da ajuda ficam na pasta do QGIS <code>norteagro_videos</code> (lista em <code>videos.json</code>); o código da coluna de vídeos é <code>videos_ajuda.py</code>, igual nos dois plugins.</p>
 """),
 
 ]

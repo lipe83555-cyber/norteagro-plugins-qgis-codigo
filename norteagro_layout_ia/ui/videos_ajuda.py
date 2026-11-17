@@ -588,7 +588,8 @@ class PlayerVideo(QDialog):
         QTimer.singleShot(0, self.close)
 
     def abrir_fora(self):
-        QDesktopServices.openUrl(QUrl.fromLocalFile(self.arquivo))
+        if e_video(self.arquivo):
+            QDesktopServices.openUrl(QUrl.fromLocalFile(self.arquivo))
 
     def keyPressEvent(self, ev):
         if self.tela.isFullScreen() and ev.key() == Qt.Key.Key_Escape:
@@ -618,7 +619,8 @@ def assistir(item, parent=None, pasta=PASTA_VIDEOS):
         QMessageBox.warning(parent, "Vídeos da ajuda", "O arquivo deste vídeo não está na pasta videos do plugin.")
         return None
     if not TEM_PLAYER:
-        QDesktopServices.openUrl(QUrl.fromLocalFile(caminho(item, pasta)))
+        if e_video(item.get("arquivo")):
+            QDesktopServices.openUrl(QUrl.fromLocalFile(caminho(item, pasta)))
         return None
     dlg = PlayerVideo(item, parent, pasta)
     dlg.setWindowModality(Qt.WindowModality.NonModal)
@@ -651,6 +653,20 @@ def _dentro(base, rel):
     return alvo
 
 
+def e_video(arquivo):
+    """Só arquivos de vídeo são baixados e abertos no player do Windows (nunca programas ou atalhos)."""
+    return str(arquivo or "").lower().endswith(EXT_VIDEO)
+
+
+def _mesma_origem(url, referencia):
+    """True se `url` fica no mesmo endereço base de `referencia` (a lista não pode mandar baixar de outro lugar)."""
+    url, referencia = str(url or ""), str(referencia or "")
+    if not referencia:
+        return True
+    base = referencia.rsplit("/videos/", 1)[0] + "/" if "/videos/" in referencia else referencia.rsplit("/", 1)[0] + "/"
+    return url.startswith(base)
+
+
 def _remover_silencioso(arquivo):
     try:
         if arquivo and os.path.exists(arquivo):
@@ -673,11 +689,19 @@ def _ler_arquivo_catalogo(arquivo):
         return {}
 
 
+def _online_confiavel(online, interno):
+    """A lista baixada só vale se apontar para o mesmo endereço da lista que veio dentro do plugin."""
+    ref = interno.get("catalogo_url") or interno.get("base_url") if interno else ""
+    return bool(online) and _mesma_origem(online.get("base_url"), ref) and _mesma_origem(online.get("catalogo_url"), ref)
+
+
 def ler_catalogo(pasta_pacote=PASTA_PACOTE, pasta=None):
     """Lista de vídeos publicados mais nova: a baixada da internet (em `pasta`) ou a que veio dentro do plugin.
     {} se não houver nenhuma."""
     interno = _ler_arquivo_catalogo(os.path.join(pasta_pacote, CATALOGO))
     online = _ler_arquivo_catalogo(os.path.join(pasta, CATALOGO_ONLINE)) if pasta else {}
+    if not _online_confiavel(online, interno):
+        online = {}
     if online and (not interno or str(online.get("gerado") or "") >= str(interno.get("gerado") or "")):
         return online
     return interno
@@ -739,7 +763,8 @@ def plano_sincronizacao(catalogo, pasta=PASTA_VIDEOS):
     removidos = _ler_removidos(pasta)
     ids_catalogo, baixar, atualizar = set(), [], []
     for c in catalogo.get("videos", []):
-        if not isinstance(c, dict) or not c.get("id") or not _dentro(pasta, c.get("arquivo")) or not c.get("partes"):
+        if (not isinstance(c, dict) or not c.get("id") or not _dentro(pasta, c.get("arquivo")) or not c.get("partes")
+                or not e_video(c.get("arquivo"))):
             continue
         ids_catalogo.add(c["id"])
         local = por_id.get(c["id"])
@@ -885,13 +910,35 @@ def _criar_tarefa(baixar, base_url, pasta, authcfg, tirados, avisar):
     return TarefaVideos()
 
 
+def _registrar(texto):
+    try:
+        from qgis.core import Qgis, QgsMessageLog
+        QgsMessageLog.logMessage(texto, "Norte Agro", getattr(Qgis, "Warning", None) or Qgis.MessageLevel.Warning)
+    except Exception:
+        pass
+
+
 def _concluir(tarefa):
+    try:
+        _concluir_tarefa(tarefa)
+    except Exception as exc:   # erro de disco etc.: fica no registro de mensagens, sem a janela de erro do Python
+        _SINC["tarefa"] = None
+        _registrar(f"vídeos da Ajuda: {exc}")
+        try:
+            SINAL.terminou.emit()
+        except Exception:
+            pass
+
+
+def _concluir_tarefa(tarefa):
     """Na linha principal do QGIS: põe os vídeos baixados no lugar e no índice."""
     _SINC["tarefa"] = None
     novos = 0
     try:
         if tarefa.prontos:
-            _fechar_players()
+            # 3) só fecha o player se um arquivo aberto for ser trocado
+            if any(os.path.exists(destino) for _c, _parcial, destino in tarefa.prontos):
+                _fechar_players()
             itens = ler(tarefa.pasta)
             for c, parcial, destino in tarefa.prontos:
                 try:
@@ -958,6 +1005,14 @@ def sincronizar(avisar=True, pasta=PASTA_VIDEOS, pasta_pacote=PASTA_PACOTE, manu
         _SINC["busca"] = busca
 
         def chegou():
+            try:
+                _chegou()
+            except Exception as exc:   # erro de disco etc.: avisa sem a janela de erro do Python
+                _SINC["busca"] = None
+                _registrar(f"vídeos da Ajuda: {exc}")
+                SINAL.terminou.emit()
+
+        def _chegou():
             _SINC["busca"] = None
             online = None
             try:
@@ -966,7 +1021,8 @@ def sincronizar(avisar=True, pasta=PASTA_VIDEOS, pasta_pacote=PASTA_PACOTE, manu
                     texto = busca.contentAsString()
                     if len(texto) < 5_000_000:
                         dados = json.loads(texto)
-                        if _catalogo_valido(dados):
+                        if _catalogo_valido(dados) and _online_confiavel(dados, _ler_arquivo_catalogo(
+                                os.path.join(pasta_pacote, CATALOGO))):
                             online = dados
             except Exception:
                 online = None
