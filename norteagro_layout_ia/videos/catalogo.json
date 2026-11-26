@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "gerado": "2026-11-26T15:04:48Z",
+ "gerado": "2026-11-26T17:08:39Z",
  "base_url": "https://raw.githubusercontent.com/lipe83555-cyber/norteagro-plugins-qgis/main/videos/norteagro_layout_ia/",
  "catalogo_url": "https://raw.githubusercontent.com/lipe83555-cyber/norteagro-plugins-qgis/main/videos/norteagro_layout_ia/catalogo.json",
  "videos": [
@@ -177,22 +177,6 @@
     {
      "nome": "979931e7e05aeaed/000",
      "tamanho": 19483776
-    }
-   ]
-  },
-  {
-   "id": "videos",
-   "assunto": "videos",
-   "principal": true,
-   "titulo": "Vídeos da ajuda: como salvar e apagar",
-   "descricao": "Como salvar, trocar e apagar os vídeos da Ajuda.",
-   "arquivo": "Vídeos da ajuda- como salvar e apagar/videos.mp4",
-   "tamanho": 20743226,
-   "sha256": "4a672934f226bbbc666a53a8d5d087b0382750757133a49d93348a41f852d59c",
-   "partes": [
-    {
-     "nome": "4a672934f226bbbc/000",
-     "tamanho": 20743226
     }
    ]
   }

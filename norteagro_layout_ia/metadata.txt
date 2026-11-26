@@ -1,7 +1,7 @@
 [general]
 name=Norte Agro - Layout de plantas
 description=Land use and environmental liabilities map layouts for rural properties in Brazil (CAR): legend, area tables, north arrow, scale and location map. / Plantas de Uso do Solo e de Passivos para o CAR.
-version=0.32.7
+version=0.32.8
 qgisMinimumVersion=3.22
 qgisMaximumVersion=4.99
 author=Felipe A. B. Martins
@@ -17,6 +17,7 @@ experimental=False
 deprecated=False
 hasProcessingProvider=no
 changelog=
+    0.32.8 - Cancelar busca de imagem para na hora (antes podia levar até uns 20 segundos e parecia não funcionar); fechar a janela do plugin também cancela a busca em andamento.
     0.32.7 - O plugin não traz mais assinatura nem logo de fábrica: cada um escolhe as suas imagens em Configurações (as plantas saem sem logo enquanto nenhuma for escolhida). Ao atualizar, o responsável técnico e a assinatura que vinham de fábrica nas versões antigas saem das Configurações. Corrigido: o plugin não abria quando o projeto tinha uma camada vazia visível (ex.: camada recém-criada, ainda sem desenho). Autor atualizado.
     0.32.6 - Ajuste só para a verificação de segurança do repositório oficial do QGIS: arquivo .bandit marcando os falsos alarmes. Nenhuma mudança no layout nem no funcionamento do plugin.
     0.32.5 - Pronto para o repositório oficial do QGIS (licença GPL, descrição em inglês). Vídeos da Ajuda pela internet: assim que publicados, o QGIS avisa e baixa em segundo plano (ao abrir e a cada 2 horas), sem precisar de versão nova do plugin. Sem dados pessoais de fábrica.

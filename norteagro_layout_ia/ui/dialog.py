@@ -817,7 +817,12 @@ class DialogoPrincipal(QDialog):
             log.aviso(f"Planilha não sugerida: {e}")
 
     def closeEvent(self, evento):
-        """Ao fechar: solta a ferramenta de desenhar do mapa, para o mapa do QGIS não ficar apontando para ela."""
+        """Ao fechar: para as buscas em andamento e solta a ferramenta de desenhar do mapa (para o mapa do
+        QGIS não ficar apontando para ela)."""
+        try:
+            self._parar_tarefas()
+        except (AttributeError, RuntimeError):
+            pass
         try:
             self.painel_mapa.soltar_ferramenta()
         except (AttributeError, RuntimeError):

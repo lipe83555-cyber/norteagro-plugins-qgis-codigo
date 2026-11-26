@@ -1,6 +1,6 @@
 {
  "versao": 1,
- "gerado": "2026-11-26T15:04:47Z",
+ "gerado": "2026-11-26T17:05:17Z",
  "base_url": "https://raw.githubusercontent.com/lipe83555-cyber/norteagro-plugins-qgis/main/videos/norteagro_uso_solo/",
  "catalogo_url": "https://raw.githubusercontent.com/lipe83555-cyber/norteagro-plugins-qgis/main/videos/norteagro_uso_solo/catalogo.json",
  "videos": [
@@ -201,22 +201,6 @@
     {
      "nome": "4500ae236a57cfdf/000",
      "tamanho": 15399984
-    }
-   ]
-  },
-  {
-   "id": "manutencao",
-   "assunto": "manutencao",
-   "principal": true,
-   "titulo": "Para quem mantém o plugin",
-   "descricao": "Para quem mantém o plugin: atualizações e publicação.",
-   "arquivo": "Para quem mantém o plugin/manutencao.mp4",
-   "tamanho": 6469676,
-   "sha256": "5caa0fb608f7d62241d0460a5f13fd5b67e2c785347fbaee2ecd3a3d04184a5e",
-   "partes": [
-    {
-     "nome": "5caa0fb608f7d622/000",
-     "tamanho": 6469676
     }
    ]
   },
@@ -457,26 +441,6 @@
     {
      "nome": "45da902eaad7ea48/001",
      "tamanho": 1944969
-    }
-   ]
-  },
-  {
-   "id": "videos",
-   "assunto": "videos",
-   "principal": true,
-   "titulo": "Vídeos da ajuda: como salvar e apagar",
-   "descricao": "Como salvar, trocar e apagar os vídeos da Ajuda.",
-   "arquivo": "Vídeos da ajuda- como salvar e apagar/videos.mp4",
-   "tamanho": 27103853,
-   "sha256": "43c38c0dec3b5a6fa3b6d71177a758adb637449f65ac2721a2dd5a7b689bf114",
-   "partes": [
-    {
-     "nome": "43c38c0dec3b5a6f/000",
-     "tamanho": 20971520
-    },
-    {
-     "nome": "43c38c0dec3b5a6f/001",
-     "tamanho": 6132333
     }
    ]
   }

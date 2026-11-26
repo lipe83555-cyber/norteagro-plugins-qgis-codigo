@@ -14,6 +14,34 @@ from qgis.PyQt.QtCore import QObject, pyqtSignal
 from ..core import imagens, log
 
 
+def _rodar_cancelavel(tarefa, funcao):
+    """Roda funcao() numa linha própria e volta na hora quando a tarefa é cancelada.
+
+    Uma consulta à internet já começada não pode ser interrompida no meio (pode levar até 20 s); antes,
+    a tarefa esperava essas consultas terminarem e o botão Cancelar parecia não funcionar. Agora a tela e a
+    tarefa do QGIS param na hora; o que ainda chegar dessas consultas é descartado."""
+    caixa = {}
+
+    def alvo():
+        try:
+            caixa["ok"] = funcao()
+        except Exception as e:  # repassado para a tarefa logo abaixo
+            caixa["erro"] = e
+
+    linha = threading.Thread(target=alvo, name="NorteAgro-busca", daemon=True)
+    linha.start()
+    while linha.is_alive():
+        if tarefa.isCanceled() or tarefa.feedback.isCanceled():
+            tarefa.feedback.cancel()  # as consultas que ainda estão na fila nem começam
+            raise imagens.Cancelado()
+        linha.join(0.1)
+    if "erro" in caixa:
+        raise caixa["erro"]
+    if "ok" not in caixa:  # a linha parou sem resposta nem erro comum
+        raise RuntimeError("a busca parou sem resposta")
+    return caixa["ok"]
+
+
 class Sinais(QObject):
     progresso = pyqtSignal(str)
     terminou = pyqtSignal(object)
@@ -35,8 +63,8 @@ class TarefaImagens(QgsTask):
 
     def run(self):
         try:
-            self.resultado = imagens.buscar(self.ret, self.ano_antiga, self.ano_recente, self.feedback,
-                                            progresso=self._progresso, tipos=self.tipos)
+            self.resultado = _rodar_cancelavel(self, lambda: imagens.buscar(
+                self.ret, self.ano_antiga, self.ano_recente, self.feedback, progresso=self._progresso, tipos=self.tipos))
             return True
         except imagens.Cancelado:
             self.erro = "Busca de imagens cancelada."
@@ -93,7 +121,7 @@ class TarefaFuncao(QgsTask):
 
     def run(self):
         try:
-            self.resultado = self.funcao(self.feedback, self._progresso)
+            self.resultado = _rodar_cancelavel(self, lambda: self.funcao(self.feedback, self._progresso))
             return True
         except imagens.Cancelado:
             self.erro = "Busca cancelada."
