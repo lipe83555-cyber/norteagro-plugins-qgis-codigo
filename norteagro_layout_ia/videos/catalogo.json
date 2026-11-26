@@ -1,7 +1,200 @@
 {
  "versao": 1,
- "gerado": "2026-11-17T02:17:37Z",
+ "gerado": "2026-11-26T15:04:48Z",
  "base_url": "https://raw.githubusercontent.com/lipe83555-cyber/norteagro-plugins-qgis/main/videos/norteagro_layout_ia/",
  "catalogo_url": "https://raw.githubusercontent.com/lipe83555-cyber/norteagro-plugins-qgis/main/videos/norteagro_layout_ia/catalogo.json",
- "videos": []
+ "videos": [
+  {
+   "id": "biblioteca",
+   "assunto": "biblioteca",
+   "principal": true,
+   "titulo": "Configurações avançadas",
+   "descricao": "Pasta da biblioteca de modelos, tabela de nomes e Python de suporte.",
+   "arquivo": "Configurações avançadas/biblioteca.mp4",
+   "tamanho": 12038051,
+   "sha256": "80f7fde7804aec5c226bf4e434aa043492be81e38a8ccc5762a8ddef4f89d568",
+   "partes": [
+    {
+     "nome": "80f7fde7804aec5c/000",
+     "tamanho": 12038051
+    }
+   ]
+  },
+  {
+   "id": "buscar",
+   "assunto": "buscar",
+   "principal": true,
+   "titulo": "Buscar imagem (sem gerar planta)",
+   "descricao": "Buscar uma imagem de satélite e pôr no projeto, sem gerar planta.",
+   "arquivo": "Buscar imagem (sem gerar planta)/buscar.mp4",
+   "tamanho": 12186087,
+   "sha256": "87fd83b4e170470be515d9ae16467dc4ff45537bd2fbb117460a677a541e6662",
+   "partes": [
+    {
+     "nome": "87fd83b4e170470b/000",
+     "tamanho": 12186087
+    }
+   ]
+  },
+  {
+   "id": "config",
+   "assunto": "config",
+   "principal": true,
+   "titulo": "Configurações: responsável técnico",
+   "descricao": "Responsável técnico, assinatura e logo que entram em toda planta.",
+   "arquivo": "Configurações- responsável técnico/config.mp4",
+   "tamanho": 8330799,
+   "sha256": "129546cd606a1d07c5cf0d528cdf01ce630cd901a814cd15f6bc07d765019c98",
+   "partes": [
+    {
+     "nome": "129546cd606a1d07/000",
+     "tamanho": 8330799
+    }
+   ]
+  },
+  {
+   "id": "dados",
+   "assunto": "dados",
+   "principal": true,
+   "titulo": "Etapa 2 - Documentos e dados do imóvel",
+   "descricao": "Ler o recibo do CAR e a matrícula em PDF e conferir os dados do imóvel.",
+   "arquivo": "Etapa 2 - Documentos e dados do imóvel/dados.mp4",
+   "tamanho": 15326541,
+   "sha256": "e51da9c033f005b7bf5987ce228cf33160779dc05ba62156651240e292cb3d01",
+   "partes": [
+    {
+     "nome": "e51da9c033f005b7/000",
+     "tamanho": 15326541
+    }
+   ]
+  },
+  {
+   "id": "gerar",
+   "assunto": "gerar",
+   "principal": true,
+   "titulo": "Gerar a planta e os botões do rodapé",
+   "descricao": "Gerar a planta, o que sai sozinho nela e os botões do rodapé.",
+   "arquivo": "Gerar a planta e os botões do rodapé/gerar.mp4",
+   "tamanho": 15270115,
+   "sha256": "d207f22bca57a80a034bb7e2f160731392911f39a97e405b7cbb9343c0b4be2a",
+   "partes": [
+    {
+     "nome": "d207f22bca57a80a/000",
+     "tamanho": 15270115
+    }
+   ]
+  },
+  {
+   "id": "imagem",
+   "assunto": "imagem",
+   "principal": true,
+   "titulo": "Etapa 4 - Mapas e imagens de satélite",
+   "descricao": "Buscar a imagem de satélite de cada mapa e trocar a escolhida.",
+   "arquivo": "Etapa 4 - Mapas e imagens de satélite/imagem.mp4",
+   "tamanho": 13002495,
+   "sha256": "7cfad3f16def84ed794ecf7928d8773894f9d0d4bf4a2be6d72e8e5e34a30ee7",
+   "partes": [
+    {
+     "nome": "7cfad3f16def84ed/000",
+     "tamanho": 13002495
+    }
+   ]
+  },
+  {
+   "id": "inicio",
+   "assunto": "inicio",
+   "principal": true,
+   "titulo": "Visão geral: o que o plugin faz",
+   "descricao": "O que o plugin faz, as três áreas da janela e o que preparar antes de começar.",
+   "arquivo": "Visão geral- o que o plugin faz/inicio.mp4",
+   "tamanho": 13148698,
+   "sha256": "f58d6814e46a37b2a26641e437bf5872e300ad26f95a2ac52ac32181a10d7d7d",
+   "partes": [
+    {
+     "nome": "f58d6814e46a37b2/000",
+     "tamanho": 13148698
+    }
+   ]
+  },
+  {
+   "id": "legenda",
+   "assunto": "legenda",
+   "principal": true,
+   "titulo": "Etapa 5 - Legenda",
+   "descricao": "Escolher, renomear, ordenar e trocar as camadas da legenda.",
+   "arquivo": "Etapa 5 - Legenda/legenda.mp4",
+   "tamanho": 15159364,
+   "sha256": "c4fa7c23994feea54242fdf7c76732c2b11ceaa2be10d8f252b220949cd7f7f7",
+   "partes": [
+    {
+     "nome": "c4fa7c23994feea5/000",
+     "tamanho": 15159364
+    }
+   ]
+  },
+  {
+   "id": "mapas",
+   "assunto": "mapas",
+   "principal": true,
+   "titulo": "Personalizar cada mapa",
+   "descricao": "Camadas, SRC e enquadramento de cada mapa da planta.",
+   "arquivo": "Personalizar cada mapa/mapas.mp4",
+   "tamanho": 15778361,
+   "sha256": "f8eb2b6721be5449cc6e3b3b3f9e6efab765eeb27f2114f4950c5c4662cad9f3",
+   "partes": [
+    {
+     "nome": "f8eb2b6721be5449/000",
+     "tamanho": 15778361
+    }
+   ]
+  },
+  {
+   "id": "modelo",
+   "assunto": "modelo",
+   "principal": true,
+   "titulo": "Etapa 1 - Modelo e folha",
+   "descricao": "Como escolher o modelo da planta (Uso do Solo ou Passivos) e o tamanho da folha.",
+   "arquivo": "Etapa 1 - Modelo e folha/modelo.mp4",
+   "tamanho": 8539333,
+   "sha256": "5755cb7bc884fd0bab86236e3818221b3aea3495fa29696f62fc83533fa956f0",
+   "partes": [
+    {
+     "nome": "5755cb7bc884fd0b/000",
+     "tamanho": 8539333
+    }
+   ]
+  },
+  {
+   "id": "tabelas",
+   "assunto": "tabelas",
+   "principal": true,
+   "titulo": "Etapa 3 - Dados de projeto e planilha de áreas",
+   "descricao": "Elaboração, data, fontes e a planilha do Quadro de Áreas (casas decimais).",
+   "arquivo": "Etapa 3 - Dados de projeto e planilha de áreas/tabelas.mp4",
+   "tamanho": 19483776,
+   "sha256": "979931e7e05aeaedf8a551410c2a438a41126a30c2555bcc064707101cd6d753",
+   "partes": [
+    {
+     "nome": "979931e7e05aeaed/000",
+     "tamanho": 19483776
+    }
+   ]
+  },
+  {
+   "id": "videos",
+   "assunto": "videos",
+   "principal": true,
+   "titulo": "Vídeos da ajuda: como salvar e apagar",
+   "descricao": "Como salvar, trocar e apagar os vídeos da Ajuda.",
+   "arquivo": "Vídeos da ajuda- como salvar e apagar/videos.mp4",
+   "tamanho": 20743226,
+   "sha256": "4a672934f226bbbc666a53a8d5d087b0382750757133a49d93348a41f852d59c",
+   "partes": [
+    {
+     "nome": "4a672934f226bbbc/000",
+     "tamanho": 20743226
+    }
+   ]
+  }
+ ]
 }

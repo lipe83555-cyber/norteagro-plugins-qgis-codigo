@@ -1,11 +1,11 @@
 [general]
 name=Norte Agro - Uso do Solo
 description=Land use mapping for rural properties in Brazil (CAR/SICAR): standard layers, area table (Excel) and KML. / Uso do solo para o CAR: camadas padronizadas, Quadro de Áreas e KML.
-version=0.7.6
+version=0.7.7
 qgisMinimumVersion=3.22
 qgisMaximumVersion=4.99
 supportsQt6=True
-author=Norte Agro Projetos
+author=Felipe A. B. Martins
 email=atendimento@norteagroprojetos.com.br
 about=Norte Agro Projetos plugin for land use mapping of rural properties in Brazil (Rural Environmental Registry - CAR/SICAR). It creates and standardizes land use layers (Shapefile + QML styles) from an office catalog, recognizes layer names, checks and fixes overlaps and gaps, computes the area table (Excel) and a KML mirror, and loads SEMAD/SIGA (Goiás) reference layers. The user interface is in Brazilian Portuguese. Help videos are downloaded from the Norte Agro GitHub repository when internet is available. | Plugin da Norte Agro Projetos para o uso do solo de imóveis rurais (CAR/SICAR): cria e padroniza camadas, reconhece nomes, confere e corrige sobreposições, calcula o Quadro de Áreas (Excel) e o espelho KML e carrega as camadas da SEMAD (SIGA). Os vídeos da Ajuda são baixados do GitHub da Norte Agro quando há internet.
 tags=norte agro,CAR,SICAR,land use,uso do solo,area,quadro de areas,kml,excel,brazil,goias
@@ -17,6 +17,7 @@ icon=icon.png
 experimental=False
 deprecated=False
 changelog=
+    0.7.7 - Autor atualizado. Nenhuma mudança no funcionamento do plugin.
     0.7.6 - Ajuste só para a verificação de segurança do repositório oficial do QGIS: arquivo .bandit marcando os falsos alarmes e comentários nas linhas da biblioteca de Excel (XlsxWriter) que o verificador confundia com senha. Nos testes de console, rodar testes_conferencia.py direto como script não dá mais erro. Nenhuma mudança no funcionamento do plugin.
     0.7.5 - Pronto para o repositório oficial do QGIS (licença GPL, descrição em inglês). Vídeos da Ajuda pela internet: assim que publicados, o QGIS avisa e baixa em segundo plano (ao abrir e a cada 2 horas), sem precisar de versão nova do plugin. Sem dados pessoais de fábrica.
     0.7.4 - Fase de teste: os plugins não pedem mais a chave de acesso (repositório público). Vídeos da Ajuda chegam junto com as atualizações: ficam numa pasta do QGIS fora do plugin (atualizar não apaga mais nenhum vídeo) e, ao abrir o QGIS, o plugin baixa em segundo plano só os vídeos que faltam e tira os que saíram. Cartão "Baixando"/"Baixar agora" na Ajuda. Saiu o botão "Gerar ZIP com os vídeos".

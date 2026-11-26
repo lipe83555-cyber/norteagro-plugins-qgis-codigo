@@ -1,7 +1,484 @@
 {
  "versao": 1,
- "gerado": "2026-11-17T02:17:37Z",
+ "gerado": "2026-11-26T15:04:47Z",
  "base_url": "https://raw.githubusercontent.com/lipe83555-cyber/norteagro-plugins-qgis/main/videos/norteagro_uso_solo/",
  "catalogo_url": "https://raw.githubusercontent.com/lipe83555-cyber/norteagro-plugins-qgis/main/videos/norteagro_uso_solo/catalogo.json",
- "videos": []
+ "videos": [
+  {
+   "id": "_extras__extra_1",
+   "assunto": "_extras",
+   "principal": false,
+   "titulo": "Como instalar o plugin pelo QGIS",
+   "descricao": "Instalar e atualizar os plugins da Norte Agro pelo Gerenciador de Complementos do QGIS.",
+   "arquivo": "Vídeos extras/como_instalar_o_plugin_pelo_qgis.mp4",
+   "tamanho": 10686733,
+   "sha256": "9f01e8674d616b1aedf8ee0bdbb3430390b80cbbb6e43adebb4deb2cc76a6a2d",
+   "partes": [
+    {
+     "nome": "9f01e8674d616b1a/000",
+     "tamanho": 10686733
+    }
+   ]
+  },
+  {
+   "id": "apelidos",
+   "assunto": "apelidos",
+   "principal": true,
+   "titulo": "Nomes não reconhecidos (ensinar um nome)",
+   "descricao": "Ensinar ao plugin um nome de camada que ele não reconheceu.",
+   "arquivo": "Nomes não reconhecidos (ensinar um nome)/apelidos.mp4",
+   "tamanho": 15059241,
+   "sha256": "c5b9595058cc2def73be66221359bc9c72766ff08d6cd800ed7ac94ab1bd5916",
+   "partes": [
+    {
+     "nome": "c5b9595058cc2def/000",
+     "tamanho": 15059241
+    }
+   ]
+  },
+  {
+   "id": "avulsa",
+   "assunto": "avulsa",
+   "principal": true,
+   "titulo": "Criar camadas em uma pasta",
+   "descricao": "Criar camadas do catálogo em qualquer pasta.",
+   "arquivo": "Criar camadas em uma pasta/avulsa.mp4",
+   "tamanho": 17177343,
+   "sha256": "a4a1785f2f9f65ee72e8c61b5e08b60a6a5a3294cb81540b2e4820c3cb57c14e",
+   "partes": [
+    {
+     "nome": "a4a1785f2f9f65ee/000",
+     "tamanho": 17177343
+    }
+   ]
+  },
+  {
+   "id": "calcular",
+   "assunto": "calcular",
+   "principal": true,
+   "titulo": "Calcular áreas",
+   "descricao": "Calcular as áreas e gerar a planilha.",
+   "arquivo": "Calcular áreas/calcular.mp4",
+   "tamanho": 25372405,
+   "sha256": "141dcc119ffb37be3165e8175bdda229c497f424b9cbbaff3be735c32650d2cb",
+   "partes": [
+    {
+     "nome": "141dcc119ffb37be/000",
+     "tamanho": 20971520
+    },
+    {
+     "nome": "141dcc119ffb37be/001",
+     "tamanho": 4400885
+    }
+   ]
+  },
+  {
+   "id": "catalogo",
+   "assunto": "catalogo",
+   "principal": true,
+   "titulo": "Catálogo do escritório",
+   "descricao": "O catálogo de camadas do escritório.",
+   "arquivo": "Catálogo do escritório/catalogo.mp4",
+   "tamanho": 12677052,
+   "sha256": "525c590c876f78af329216314593fb2bae13969f5fdd2cc5d90204f2fadb7881",
+   "partes": [
+    {
+     "nome": "525c590c876f78af/000",
+     "tamanho": 12677052
+    }
+   ]
+  },
+  {
+   "id": "comecar",
+   "assunto": "comecar",
+   "principal": true,
+   "titulo": "Começando: o que o plugin faz",
+   "descricao": "O que o plugin faz e por onde começar.",
+   "arquivo": "Começando- o que o plugin faz/comecar.mp4",
+   "tamanho": 15856896,
+   "sha256": "1c2d8dfd54579b96c460c0cfb658d877f10456e039006ee95fbaca032c36780b",
+   "partes": [
+    {
+     "nome": "1c2d8dfd54579b96/000",
+     "tamanho": 15856896
+    }
+   ]
+  },
+  {
+   "id": "configurar_pasta",
+   "assunto": "configurar_pasta",
+   "principal": true,
+   "titulo": "Configurar a pasta do mapa",
+   "descricao": "Como configurar a pasta do mapa do imóvel.",
+   "arquivo": "Configurar a pasta do mapa/configurar_pasta.mp4",
+   "tamanho": 7350105,
+   "sha256": "8176844cb92e155fa177cd4432e16c151553001799efe1f7a3aaa9ec9716ffbf",
+   "partes": [
+    {
+     "nome": "8176844cb92e155f/000",
+     "tamanho": 7350105
+    }
+   ]
+  },
+  {
+   "id": "cor_padrao",
+   "assunto": "cor_padrao",
+   "principal": true,
+   "titulo": "Cor padrão das camadas",
+   "descricao": "Mudar a cor padrão das camadas.",
+   "arquivo": "Cor padrão das camadas/cor_padrao.mp4",
+   "tamanho": 8318650,
+   "sha256": "2940004aa4dfee1f745c616ac85a15d82f43fd7ed75359f6fd3484d5a733e0e1",
+   "partes": [
+    {
+     "nome": "2940004aa4dfee1f/000",
+     "tamanho": 8318650
+    }
+   ]
+  },
+  {
+   "id": "correcao",
+   "assunto": "correcao",
+   "principal": true,
+   "titulo": "Conferir e corrigir camadas",
+   "descricao": "Conferir e corrigir as camadas antes do cálculo.",
+   "arquivo": "Conferir e corrigir camadas/correcao.mp4",
+   "tamanho": 21541601,
+   "sha256": "29784354646e0739067bc9db53bf656240df6cfe38e3597b0347b535d4e0651f",
+   "partes": [
+    {
+     "nome": "29784354646e0739/000",
+     "tamanho": 20971520
+    },
+    {
+     "nome": "29784354646e0739/001",
+     "tamanho": 570081
+    }
+   ]
+  },
+  {
+   "id": "duvidas",
+   "assunto": "duvidas",
+   "principal": true,
+   "titulo": "Perguntas frequentes",
+   "descricao": "Respostas para as dúvidas mais comuns.",
+   "arquivo": "Perguntas frequentes/duvidas.mp4",
+   "tamanho": 13944607,
+   "sha256": "58f3d7ee266565899f8825be7cb3a816852b02d7a1fbaac492aa4a852512cc7b",
+   "partes": [
+    {
+     "nome": "58f3d7ee26656589/000",
+     "tamanho": 13944607
+    }
+   ]
+  },
+  {
+   "id": "gerenciar",
+   "assunto": "gerenciar",
+   "principal": true,
+   "titulo": "Criar / gerenciar camadas",
+   "descricao": "Criar e gerenciar as camadas padrão do imóvel.",
+   "arquivo": "Criar - gerenciar camadas/gerenciar.mp4",
+   "tamanho": 11770727,
+   "sha256": "c7c315277d26590af5851027eda7474a320e91733ff30e8147232d369a75fdbb",
+   "partes": [
+    {
+     "nome": "c7c315277d26590a/000",
+     "tamanho": 11770727
+    }
+   ]
+  },
+  {
+   "id": "kml",
+   "assunto": "kml",
+   "principal": true,
+   "titulo": "Desenhar, salvar e a cópia KML",
+   "descricao": "Desenhar, salvar e a cópia KML automática.",
+   "arquivo": "Desenhar, salvar e a cópia KML/kml.mp4",
+   "tamanho": 15399984,
+   "sha256": "4500ae236a57cfdf83a2d2d5ba52fe1f05eb9fd2e1e080ac15cfdc969f078828",
+   "partes": [
+    {
+     "nome": "4500ae236a57cfdf/000",
+     "tamanho": 15399984
+    }
+   ]
+  },
+  {
+   "id": "manutencao",
+   "assunto": "manutencao",
+   "principal": true,
+   "titulo": "Para quem mantém o plugin",
+   "descricao": "Para quem mantém o plugin: atualizações e publicação.",
+   "arquivo": "Para quem mantém o plugin/manutencao.mp4",
+   "tamanho": 6469676,
+   "sha256": "5caa0fb608f7d62241d0460a5f13fd5b67e2c785347fbaee2ecd3a3d04184a5e",
+   "partes": [
+    {
+     "nome": "5caa0fb608f7d622/000",
+     "tamanho": 6469676
+    }
+   ]
+  },
+  {
+   "id": "modelos_pastas",
+   "assunto": "modelos_pastas",
+   "principal": true,
+   "titulo": "Modelos: estrutura de pastas",
+   "descricao": "Modelos de estrutura de pastas do mapa.",
+   "arquivo": "Modelos- estrutura de pastas/modelos_pastas.mp4",
+   "tamanho": 28818459,
+   "sha256": "ac8f735da983912f5f10f39720a09471c4b46876c9bf94940297ccede29b2b60",
+   "partes": [
+    {
+     "nome": "ac8f735da983912f/000",
+     "tamanho": 20971520
+    },
+    {
+     "nome": "ac8f735da983912f/001",
+     "tamanho": 7846939
+    }
+   ]
+  },
+  {
+   "id": "modelos_tabela",
+   "assunto": "modelos_tabela",
+   "principal": true,
+   "titulo": "Modelos: visual da planilha",
+   "descricao": "O visual da planilha do Quadro de Áreas.",
+   "arquivo": "Modelos- visual da planilha/modelos_tabela.mp4",
+   "tamanho": 23579788,
+   "sha256": "6855da0bb8e8df565d41a181deb28bc88bcc8e3ea28d21884ee228c80ac3fcc9",
+   "partes": [
+    {
+     "nome": "6855da0bb8e8df56/000",
+     "tamanho": 20971520
+    },
+    {
+     "nome": "6855da0bb8e8df56/001",
+     "tamanho": 2608268
+    }
+   ]
+  },
+  {
+   "id": "nova_camada",
+   "assunto": "nova_camada",
+   "principal": true,
+   "titulo": "Nova camada e lugar no Quadro de Áreas",
+   "descricao": "Criar uma camada nova e escolher o lugar dela no Quadro de Áreas.",
+   "arquivo": "Nova camada e lugar no Quadro de Áreas/nova_camada.mp4",
+   "tamanho": 5510947,
+   "sha256": "29db1d1c2789eabf690d4a396f7ea7d03242e62e58e9f690e30401cfa42c115e",
+   "partes": [
+    {
+     "nome": "29db1d1c2789eabf/000",
+     "tamanho": 5510947
+    }
+   ]
+  },
+  {
+   "id": "padronizar",
+   "assunto": "padronizar",
+   "principal": true,
+   "titulo": "Padronizar camadas de cliente",
+   "descricao": "Trazer camadas do cliente para o padrão do escritório.",
+   "arquivo": "Padronizar camadas de cliente/padronizar.mp4",
+   "tamanho": 13449117,
+   "sha256": "3e033b7e5ac0884a5a33727f8a26fbe5941cb59f9539fbc52abcd3247cd9edde",
+   "partes": [
+    {
+     "nome": "3e033b7e5ac0884a/000",
+     "tamanho": 13449117
+    }
+   ]
+  },
+  {
+   "id": "pasta_renomear",
+   "assunto": "pasta_renomear",
+   "principal": true,
+   "titulo": "Pasta do mapa (trocar e renomear) e grupos",
+   "descricao": "Trocar ou renomear a pasta do mapa e os grupos.",
+   "arquivo": "Pasta do mapa (trocar e renomear) e grupos/pasta_renomear.mp4",
+   "tamanho": 12221985,
+   "sha256": "4ff1839bc3d5b191dc6d36771c18998ad42529dff88be32f1ef0c34d6c2808fb",
+   "partes": [
+    {
+     "nome": "4ff1839bc3d5b191/000",
+     "tamanho": 12221985
+    }
+   ]
+  },
+  {
+   "id": "planilha",
+   "assunto": "planilha",
+   "principal": true,
+   "titulo": "Entendendo a planilha",
+   "descricao": "Como ler cada aba da planilha do Quadro de Áreas.",
+   "arquivo": "Entendendo a planilha/planilha.mp4",
+   "tamanho": 16067078,
+   "sha256": "650bc5808f7fffff6e6c8364f83e1218ef17a5478a7be04ef29ad21285cf35b0",
+   "partes": [
+    {
+     "nome": "650bc5808f7fffff/000",
+     "tamanho": 16067078
+    }
+   ]
+  },
+  {
+   "id": "problemas",
+   "assunto": "problemas",
+   "principal": true,
+   "titulo": "Sobreposições e problemas de desenho",
+   "descricao": "Sobreposições e problemas de desenho apontados pelo plugin.",
+   "arquivo": "Sobreposições e problemas de desenho/problemas.mp4",
+   "tamanho": 25010249,
+   "sha256": "2eb2929e100e064aa214c2d168e38c5a01ff87be8284c5ac714c2b394d6f68c4",
+   "partes": [
+    {
+     "nome": "2eb2929e100e064a/000",
+     "tamanho": 20971520
+    },
+    {
+     "nome": "2eb2929e100e064a/001",
+     "tamanho": 4038729
+    }
+   ]
+  },
+  {
+   "id": "reconhecimento",
+   "assunto": "reconhecimento",
+   "principal": true,
+   "titulo": "Como o plugin reconhece as camadas",
+   "descricao": "Como o plugin reconhece cada camada pelo nome.",
+   "arquivo": "Como o plugin reconhece as camadas/reconhecimento.mp4",
+   "tamanho": 12155760,
+   "sha256": "3eab65d3456c22e331aad2859e12fbc7e10f674f7713a4290650844f6e3113c2",
+   "partes": [
+    {
+     "nome": "3eab65d3456c22e3/000",
+     "tamanho": 12155760
+    }
+   ]
+  },
+  {
+   "id": "referencias",
+   "assunto": "referencias",
+   "principal": true,
+   "titulo": "Camadas de referência",
+   "descricao": "Camadas que são só consulta e não entram no cálculo.",
+   "arquivo": "Camadas de referência/referencias.mp4",
+   "tamanho": 10823650,
+   "sha256": "778aac5108d02c48cb317bce909c7f8b76922321672651116e4a774188ce4bf8",
+   "partes": [
+    {
+     "nome": "778aac5108d02c48/000",
+     "tamanho": 10823650
+    }
+   ]
+  },
+  {
+   "id": "seguranca",
+   "assunto": "seguranca",
+   "principal": true,
+   "titulo": "Segurança: o que o plugin nunca faz",
+   "descricao": "O que o plugin nunca faz com os seus arquivos.",
+   "arquivo": "Segurança- o que o plugin nunca faz/seguranca.mp4",
+   "tamanho": 10328341,
+   "sha256": "e7bd6909691ffebd0add5c858d9aee8ba284e085792d5a2f8de2d792ef554a36",
+   "partes": [
+    {
+     "nome": "e7bd6909691ffebd/000",
+     "tamanho": 10328341
+    }
+   ]
+  },
+  {
+   "id": "semad",
+   "assunto": "semad",
+   "principal": true,
+   "titulo": "Camadas da SEMAD (SIGA)",
+   "descricao": "Murundus, APP de relevo e Unidades de Conservação da SEMAD (SIGA).",
+   "arquivo": "Camadas da SEMAD (SIGA)/semad.mp4",
+   "tamanho": 14351994,
+   "sha256": "1e82c6ef28495212dd2db22d2be75d8a42d9d2f24b3b1f3e9056c7901d11b5fb",
+   "partes": [
+    {
+     "nome": "1e82c6ef28495212/000",
+     "tamanho": 14351994
+    }
+   ]
+  },
+  {
+   "id": "substituir",
+   "assunto": "substituir",
+   "principal": true,
+   "titulo": "Substituir o conteúdo de uma camada",
+   "descricao": "Trocar o conteúdo de uma camada sem perder o padrão.",
+   "arquivo": "Substituir o conteúdo de uma camada/substituir.mp4",
+   "tamanho": 13194113,
+   "sha256": "b684caf9db74da12ac8e9e2768750d038540c38b09e25def3fd8e0846f9943e4",
+   "partes": [
+    {
+     "nome": "b684caf9db74da12/000",
+     "tamanho": 13194113
+    }
+   ]
+  },
+  {
+   "id": "tela_inicial",
+   "assunto": "tela_inicial",
+   "principal": true,
+   "titulo": "Tela inicial do plugin",
+   "descricao": "Os caminhos da tela inicial do plugin.",
+   "arquivo": "Tela inicial do plugin/tela_inicial.mp4",
+   "tamanho": 7647329,
+   "sha256": "cec6b4b9b9d27f4b35ac082c2408d7df6e42629538a521b5e5a1b1b3965a44bd",
+   "partes": [
+    {
+     "nome": "cec6b4b9b9d27f4b/000",
+     "tamanho": 7647329
+    }
+   ]
+  },
+  {
+   "id": "temas",
+   "assunto": "temas",
+   "principal": true,
+   "titulo": "Modelos: temas de cores",
+   "descricao": "Temas de cores das camadas.",
+   "arquivo": "Modelos- temas de cores/temas.mp4",
+   "tamanho": 22916489,
+   "sha256": "45da902eaad7ea4889af92dc3c7df308d8f1075e489030267ea19246e083a338",
+   "partes": [
+    {
+     "nome": "45da902eaad7ea48/000",
+     "tamanho": 20971520
+    },
+    {
+     "nome": "45da902eaad7ea48/001",
+     "tamanho": 1944969
+    }
+   ]
+  },
+  {
+   "id": "videos",
+   "assunto": "videos",
+   "principal": true,
+   "titulo": "Vídeos da ajuda: como salvar e apagar",
+   "descricao": "Como salvar, trocar e apagar os vídeos da Ajuda.",
+   "arquivo": "Vídeos da ajuda- como salvar e apagar/videos.mp4",
+   "tamanho": 27103853,
+   "sha256": "43c38c0dec3b5a6fa3b6d71177a758adb637449f65ac2721a2dd5a7b689bf114",
+   "partes": [
+    {
+     "nome": "43c38c0dec3b5a6f/000",
+     "tamanho": 20971520
+    },
+    {
+     "nome": "43c38c0dec3b5a6f/001",
+     "tamanho": 6132333
+    }
+   ]
+  }
+ ]
 }
