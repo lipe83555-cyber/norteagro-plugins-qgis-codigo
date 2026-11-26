@@ -231,8 +231,9 @@ def construir_fabrica(projeto, chave, folha="A3", corr=None, assinatura=None, lo
         elif t == "linha":
             builder.linha(layout, it["id"], g["x1"], g["y1"], g["x2"], g["y2"], 0.25 * max(1.0, s ** 0.5))
         elif t == "logo":
-            builder.figura(layout, it["id"], logo or os.path.join(builder.ASSETS, "logo_norteagro.png"),
-                           g["x"], g["y"], g["w"], g["h"])
+            p = builder.figura(layout, it["id"], logo if logo and os.path.isfile(logo) else None,
+                               g["x"], g["y"], g["w"], g["h"])
+            p.setCustomProperty("na_papel", "logo")
         elif t == "assinatura":
             p = builder.figura(layout, it["id"], assinatura if assinatura and os.path.isfile(assinatura) else None,
                                g["x"], g["y"], g["w"], g["h"])
@@ -446,13 +447,17 @@ def gerar_planta(projeto, layout, meta, dados, cfg_mapas=None, blocos=None, casa
     # imóvel no centro; barra de escala do canto, tabelas e legenda sem ficar em cima dele
     _arrumar_dentro_dos_mapas(projeto, layout, meta, corr, s, avisos, refazer_tabelas)
 
-    # logo do escritório (configurações) no lugar da logo, também em modelos da biblioteca
-    if logo and os.path.isfile(logo):
-        for it in layout.items():
-            if isinstance(it, QgsLayoutItemPicture) and (it.id() == "logo" or it.customProperty("na_papel") == "logo"):
+    # logo do escritório (configurações) no lugar da logo, também em modelos da biblioteca.
+    # v0.32.7: sem logo escolhida, a logo de fábrica antiga (logo_norteagro.png) sai da planta.
+    for it in layout.items():
+        if isinstance(it, QgsLayoutItemPicture) and (it.id() == "logo" or it.customProperty("na_papel") == "logo"):
+            if logo and os.path.isfile(logo):
                 it.setPicturePath(builder.caminho_base64(logo))
                 it.setResizeMode(QgsLayoutItemPicture.ResizeMode.Zoom)
                 it.setCustomProperty("na_origem", os.path.basename(logo))
+            elif it.customProperty("na_origem") == "logo_norteagro.png":
+                it.setPicturePath("")
+                it.setCustomProperty("na_origem", "")
     # assinatura do RT (sempre do perfil, nunca da imagem)
     for it in layout.items():
         if isinstance(it, QgsLayoutItemPicture) and it.customProperty("na_papel") == "assinatura":

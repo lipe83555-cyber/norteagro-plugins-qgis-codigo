@@ -252,14 +252,14 @@ def camadas_padrao(projeto, papel_mapa, corr):
         return [c for c, _ in todas if papel_camada(c, corr) == "municipio"][:1]
     imovel = camada_imovel(projeto, corr)
     limite = None
-    if imovel is not None and not imovel.extent().isEmpty():
+    if imovel is not None and not imovel.extent().isEmpty() and extensao_valida(imovel.extent()):
         e = transformar(imovel.extent(), imovel.crs(), QgsCoordinateReferenceSystem("EPSG:4674"), projeto)
         limite = max(e.width() * e.height(), 1e-8) * 400  # 20 x 20 vezes o imóvel
     saida = []
     for c, vis in todas:
         if not vis or c.id() in apoio or papel_camada(c, corr) in ("municipio", "estado", "brasil"):
             continue
-        if limite and c.type() == compat.CAMADA_VETOR and c is not imovel:
+        if limite and c.type() == compat.CAMADA_VETOR and c is not imovel and extensao_valida(c.extent()):
             e = transformar(c.extent(), c.crs(), QgsCoordinateReferenceSystem("EPSG:4674"), projeto)
             if e.width() * e.height() > limite:
                 continue  # camada regional (estado, país, malha municipal): não entra no mapa do imóvel
@@ -280,6 +280,13 @@ def camada_imovel(projeto, corr):
 
 
 # ------------------------------------------------------------------ extensões
+def extensao_valida(r):
+    """False para a extensão de camada vazia (nula/infinita): ela não pode ser transformada de SRC.
+    Um ponto só (extensão de tamanho zero) continua válido."""
+    return not r.isNull() and all(math.isfinite(v) and abs(v) < 1e15 for v in
+                                  (r.xMinimum(), r.yMinimum(), r.xMaximum(), r.yMaximum()))
+
+
 def transformar(retangulo, crs_origem, crs_destino, projeto):
     if not crs_origem.isValid() or not crs_destino.isValid() or crs_origem == crs_destino:
         return QgsRectangle(retangulo)
@@ -302,7 +309,7 @@ def com_margem(r, margem):
 
 def utm_sugerido(camada, projeto):
     """EPSG SIRGAS 2000 / UTM do fuso do centro da camada (hemisfério sul: 31960 + fuso)."""
-    if camada is None:
+    if camada is None or not extensao_valida(camada.extent()):
         return None
     geo = transformar(camada.extent(), camada.crs(), QgsCoordinateReferenceSystem("EPSG:4674"), projeto)
     lon, lat = geo.center().x(), geo.center().y()
@@ -1081,14 +1088,14 @@ def construir_de_proposta(projeto, proposta, nome_layout, corr=None, dados=None,
             papel = el.get("role")
             caminho = None
             if papel == "logo":
-                caminho = logo or os.path.join(ASSETS, "logo_norteagro.png")
+                caminho = logo if logo and os.path.isfile(logo) else None  # v0.32.7: sem logo de fábrica
             elif papel == "assinatura":
                 caminho = assinatura
             elif imagem_referencia and pasta_recursos and not el.get("sem_recorte", True):
                 # recorte só com confirmação explícita na revisão (pode ser assinatura/carimbo de terceiro)
                 caminho = recortar_referencia(imagem_referencia, el, pasta_recursos)
             figura(layout, el["id"], caminho, x, y, w, h)
-            if not caminho:
+            if not caminho and papel != "logo":
                 avisos.append(f"Imagem '{el['id']}' sem arquivo: escolha a figura no layout.")
         elif t == "table":
             if el.get("block") and blocos is not None and el["block"] in blocos:

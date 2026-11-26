@@ -1,10 +1,10 @@
 [general]
 name=Norte Agro - Layout de plantas
 description=Land use and environmental liabilities map layouts for rural properties in Brazil (CAR): legend, area tables, north arrow, scale and location map. / Plantas de Uso do Solo e de Passivos para o CAR.
-version=0.32.6
+version=0.32.7
 qgisMinimumVersion=3.22
 qgisMaximumVersion=4.99
-author=Norte Agro Projetos
+author=Felipe A. B. Martins
 email=atendimento@norteagroprojetos.com.br
 about=Norte Agro Projetos plugin that builds the Land Use map and the Environmental Liabilities map of a rural property in Brazil (CAR) from templates: it reads the CAR receipt and the property registry PDF locally, uses the area table produced by the "Norte Agro - Uso do Solo" plugin and generates the layout with legend, area tables, north arrow, scale, municipality location and the technical manager block (filled in Settings). Each map has its own layers, CRS and extent; variable texts use project variables (@na_*). Optional OCR for scanned documents uses a separate Python environment that the user installs (support folder). The user interface is in Brazilian Portuguese. | Plugin da Norte Agro Projetos que gera a Planta de Uso do Solo e a Planta de Passivos do imóvel a partir de modelos, lendo o recibo do CAR, a matrícula e o Quadro de Áreas do plugin "Norte Agro - Uso do Solo". O responsável técnico é preenchido em Configurações.
 tags=norte agro,CAR,layout,planta,map,land use,uso do solo,passivos,qpt,brazil
@@ -17,6 +17,7 @@ experimental=False
 deprecated=False
 hasProcessingProvider=no
 changelog=
+    0.32.7 - O plugin não traz mais assinatura nem logo de fábrica: cada um escolhe as suas imagens em Configurações (as plantas saem sem logo enquanto nenhuma for escolhida). Ao atualizar, o responsável técnico e a assinatura que vinham de fábrica nas versões antigas saem das Configurações. Corrigido: o plugin não abria quando o projeto tinha uma camada vazia visível (ex.: camada recém-criada, ainda sem desenho). Autor atualizado.
     0.32.6 - Ajuste só para a verificação de segurança do repositório oficial do QGIS: arquivo .bandit marcando os falsos alarmes. Nenhuma mudança no layout nem no funcionamento do plugin.
     0.32.5 - Pronto para o repositório oficial do QGIS (licença GPL, descrição em inglês). Vídeos da Ajuda pela internet: assim que publicados, o QGIS avisa e baixa em segundo plano (ao abrir e a cada 2 horas), sem precisar de versão nova do plugin. Sem dados pessoais de fábrica.
     0.32.4 - Fase de teste: os plugins não pedem mais a chave de acesso (repositório público). Vídeos da Ajuda chegam junto com as atualizações: ficam numa pasta do QGIS fora do plugin (atualizar não apaga mais nenhum vídeo) e, ao abrir o QGIS, o plugin baixa em segundo plano só os vídeos que faltam e tira os que saíram. Cartão "Baixando"/"Baixar agora" na Ajuda. Saiu o botão "Gerar ZIP com os vídeos".
@@ -43,6 +44,6 @@ changelog=
     0.15.0 - Passivos: uma legenda em cada mapa (esquerda = grupo Uso do Solo, direita = grupo Passivos), escolhidas na etapa Legenda, e uma barra de escala padrão do QGIS em cada mapa; seta do norte própria de cada modelo (estrela com círculo no Uso do Solo, rosa dos ventos N/S/E/O no Passivos).
     0.14.0 - Barra de escala igual ao botão "Adicionar barra de escala" do QGIS, ligada ao mapa maior (sem ajustes próprios); legenda no padrão do escritório (camadas extras entre Reserva legal e APP total) e ajustada ao espaço reservado; legenda de Passivos sem itens repetidos; camadas vazias não quebram mais o enquadramento do mapa.0.13.0 - botões Cancelar processo e Limpar tudo; legenda montada a partir do grupo de camadas (Uso do Solo / Passivos, escolhível) nas duas plantas, com marcar/desmarcar; legenda deixa de ficar presa a escolhas antigas.
     0.12.0 - nova área "Buscar imagem" (mais recente ou período, mesmos critérios de qualidade, adiciona ao projeto); busca de imagens 3 a 4x mais rápida (consultas em paralelo, resultado guardado na sessão) e sem risco de congelar o QGIS (leitura das imagens em processo separado); cartão de andamento com porcentagem e tempo restante.
-    0.11.0 - janela redesenhada: cabeçalho com logo e três áreas (Nova planta, Criar modelo com IA, Configurações), planta em 5 etapas com Voltar/Próximo e botão Gerar planta sempre visível, ações secundárias em menus, ajustes avançados recolhidos; assinatura do Ramon e logo Norte Agro entram sozinhas no lugar certo de toda planta (trocáveis em Configurações, com prévia).
+    0.11.0 - janela redesenhada: cabeçalho com logo e três áreas (Nova planta, Criar modelo com IA, Configurações), planta em 5 etapas com Voltar/Próximo e botão Gerar planta sempre visível, ações secundárias em menus, ajustes avançados recolhidos; assinatura e logo entram sozinhas no lugar certo de toda planta (trocáveis em Configurações, com prévia).
     0.10.0 - imagens de satélite automáticas em cores reais (Esri Wayback alta resolução + Sentinel-2): Passivos com a mais recente de 2019 à esquerda e a mais recente do ano à direita, datas por extenso nos quadros brancos; Uso do Solo com a mais recente do ano; legenda dos Passivos com itens padrão editáveis (marcar, desmarcar, trocar camada, renomear, acrescentar) e aviso das camadas que faltam.
     0.9.0 - modelos de fábrica Uso do Solo e Passivos; leitura de recibo do CAR e matrícula; planilha de áreas sem dependências; mapas independentes; pós-processamento; proteção de identidade; backends de IA intercambiáveis.

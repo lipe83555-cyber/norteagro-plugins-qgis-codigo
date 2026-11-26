@@ -971,11 +971,11 @@ class DialogoPrincipal(QDialog):
             origem = self.cb_modelo.currentData()
             nome = f"{self._nome_modelo_curto()} - {dados['na_imovel'] or 'imóvel'}"
             layout, meta = modelos.abrir_modelo(projeto, origem, self.cb_folha.currentText(), self.corr,
-                                                perfil.get("assinatura"), logo=config.logo(), nome=nome)
+                                                perfil.get("assinatura"), logo=config.logo_planta(), nome=nome)
             avisos = modelos.gerar_planta(projeto, layout, meta, dados, self.cfg_mapas, self.blocos,
                                           self.sp_casas.value(), self.corr, perfil.get("assinatura"),
                                           progresso=self._progresso, imagens=imagens_mapas,
-                                          legenda_itens=legenda_itens, logo=config.logo())
+                                          legenda_itens=legenda_itens, logo=config.logo_planta())
             builder.adicionar_ao_projeto(projeto, layout)
             self.layout_planta = layout
             avisos += self.avisos_planilha if self.blocos else []
@@ -1066,13 +1066,13 @@ class DialogoPrincipal(QDialog):
         self.fw_assinatura = QgsFileWidget()
         self.fw_assinatura.setFilter("Imagem (*.png *.jpg *.jpeg *.svg)")
         self.fw_assinatura.setFilePath(config.valor("rt/assinatura", "") or "")
-        self.fw_assinatura.lineEdit().setPlaceholderText("padrão: assinatura do Ramon que acompanha o plugin")
+        self.fw_assinatura.lineEdit().setPlaceholderText("escolha a imagem da assinatura do RT (opcional)")
         self.fw_assinatura.fileChanged.connect(lambda *_: self._previa_identidade())
         f.addRow("Assinatura:", self.fw_assinatura)
         self.fw_logo = QgsFileWidget()
         self.fw_logo.setFilter("Imagem (*.png *.jpg *.jpeg *.svg)")
         self.fw_logo.setFilePath(config.valor("logo", "") or "")
-        self.fw_logo.lineEdit().setPlaceholderText("padrão: logo Norte Agro que acompanha o plugin")
+        self.fw_logo.lineEdit().setPlaceholderText("escolha a imagem da logo (opcional)")
         self.fw_logo.fileChanged.connect(lambda *_: self._previa_identidade())
         f.addRow("Logo:", self.fw_logo)
         hp = QHBoxLayout()
@@ -1136,10 +1136,10 @@ class DialogoPrincipal(QDialog):
         self.status.setText("Responsável técnico, assinatura e logo salvos.")
 
     def _previa_identidade(self):
-        """Mostra a assinatura e a logo que vão para a planta (as escolhidas ou as padrão)."""
+        """Mostra a assinatura e a logo que vão para a planta (as escolhidas em Configurações)."""
         nome = self.campos_rt["na_responsavel"].text() if "na_responsavel" in self.campos_rt else ""
         ass = self.fw_assinatura.filePath() or config.assinatura_padrao(nome)
-        logo = self.fw_logo.filePath() or config.LOGO_PADRAO
+        logo = self.fw_logo.filePath()
         for lb, arq, vazio in ((self.lb_prev_assinatura, ass, "sem assinatura"), (self.lb_prev_logo, logo, "sem logo")):
             pix = QPixmap(arq) if arq and os.path.isfile(arq) else QPixmap()
             if pix.isNull():

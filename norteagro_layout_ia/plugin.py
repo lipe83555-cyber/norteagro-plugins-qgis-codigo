@@ -25,6 +25,14 @@ class NorteAgroLayoutIA:
             avisar_se_precisa_acesso(self.iface)
         except Exception:
             pass
+        try:  # v0.32.7: tira o responsável técnico e a assinatura que vinham de fábrica nas versões antigas
+            from .core import config
+            if config.limpar_rt_antigo():
+                self.iface.messageBar().pushInfo(
+                    "Layout de plantas", "O responsável técnico e a assinatura que vinham de fábrica foram retirados. "
+                    "Preencha os seus em Configurações.")
+        except Exception as e:  # nunca impede o plugin de carregar
+            log.aviso(f"Limpeza do responsável técnico antigo não concluída: {e}")
         try:  # vídeos da Ajuda que vieram na atualização: baixa em segundo plano os que faltam
             from .ui.videos_ajuda import iniciar_sincronizacao
             iniciar_sincronizacao()

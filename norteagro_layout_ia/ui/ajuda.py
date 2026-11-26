@@ -157,7 +157,7 @@ pelo próprio editor do QGIS.</p>
     ("config", "Configurações: responsável técnico", f"""
 <h2>Configurações: responsável técnico</h2>
 <p><b>Nome</b>, <b>Título</b>, <b>Registro</b> (CREA) e <b>Empresa</b>, a imagem da <b>Assinatura</b> e a <b>Logo</b>. Entram
-sozinhos em toda planta. A assinatura do Ramon e a logo do escritório já vêm configuradas; a <b>Prévia</b> mostra como ficam.
+sozinhos em toda planta. A assinatura e a logo são opcionais: escolha as imagens aqui; a <b>Prévia</b> mostra como ficam.
 Clique em <b>Salvar</b>.</p>
 """),
     ("biblioteca", "Configurações avançadas", f"""
