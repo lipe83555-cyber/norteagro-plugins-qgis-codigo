@@ -52,7 +52,7 @@ e gera a planilha <b>Quadro de Áreas</b> no Excel, com as conferências de dese
 <tr><td><b>Só calcular áreas</b></td><td>Calcula as camadas que já estão abertas (inclusive de cliente) e gera a planilha, sem criar nada.</td></tr>
 <tr><td><b>Camadas da SEMAD (SIGA)</b></td><td>Traz do SIGA os murundus, as APP de relevo e as Unidades de Conservação do imóvel ({_ir("semad","ver")}).</td></tr>
 </table>
-{_dica("em qualquer janela do plugin, clique no <b>?</b> (no canto do título ou do cabeçalho) para abrir esta ajuda já no assunto daquela tela. Ao lado de cada assunto ficam os <b>vídeos</b> dele (" + _ir("videos","como salvar") + ").")}
+{_dica("em qualquer janela do plugin, clique no <b>?</b> (no canto do título ou do cabeçalho) para abrir esta ajuda já no assunto daquela tela. Ao lado de cada assunto ficam os <b>vídeos</b> dele.")}
 """),
 
 ("tela_inicial", "Tela inicial do plugin", f"""
@@ -535,33 +535,7 @@ Num projeto já configurado, <b>Aplicar neste projeto</b> cria só o que falta; 
 <p>O arquivo da camada foi movido ou apagado no computador. Recarregue a camada do lugar certo ou remova-a do projeto.</p>
 """),
 
-("videos", "Vídeos da ajuda: como salvar e apagar", f"""
-<h2>Vídeos da ajuda</h2>
-<p>Cada assunto desta ajuda tem um <b>lugar para vídeo</b>, na coluna da direita, ao lado do texto. Grave com o programa que preferir e salve o vídeo aqui. Na lista de assuntos, <b>●</b> verde = já tem vídeo; <b>○</b> = falta o vídeo. Marque <b>Mostrar só os que faltam vídeo</b> para ver o que ainda falta gravar.</p>
-<h3>Salvar o vídeo de um assunto</h3>
-<ol>
-<li>Clique no assunto à esquerda.</li>
-<li>Na coluna <b>Vídeos deste assunto</b>, clique em <b>Salvar vídeo no plugin...</b>, escolha o arquivo (MP4, AVI, MKV, WMV, MOV...), confira o nome e escreva para que serve. A janela mostra a pasta onde ele vai ficar.</li>
-<li>Clique em <b>Salvar no plugin</b>: o vídeo é copiado para a <b>pasta dos vídeos</b> deste plugin, numa pasta só daquele assunto (ex.: <code>Calcular áreas</code>). Sem limite de tamanho ou duração. O arquivo original continua onde você gravou.</li>
-</ol>
-<p>O cartão do vídeo mostra onde ele foi salvo. <b>▶ Assistir</b> toca o vídeo (se o formato não tocar dentro do QGIS, ele abre sozinho no player do Windows). <b>Trocar...</b> põe outro arquivo no lugar; <b>Editar</b> muda o nome e o texto; <b>Mostrar na pasta</b> abre o Explorador com o arquivo selecionado.</p>
-<h3>Apagar</h3>
-<p><b>Apagar</b> tira o vídeo da ajuda e <b>apaga o arquivo da pasta dos vídeos</b> (a pasta do assunto some se ficar vazia). O plugin pergunta antes e mostra o caminho do arquivo.</p>
-<h3>Mais vídeos (fora dos lugares)</h3>
-<p><b>+ Mais um vídeo</b> acrescenta quantos vídeos quiser: escolha se ele aparece num assunto (embaixo do vídeo principal, na mesma pasta do assunto) ou em <b>Vídeos extras</b> (pasta <code>Vídeos extras</code>), o último item da lista.</p>
-<h3>Levar os vídeos para os colegas</h3>
-<p>Os vídeos chegam aos colegas <b>pela internet</b>: quando quem cuida dos plugins publica vídeos, o QGIS de cada colega avisa na barra de cima e baixa sozinho, em segundo plano, só os vídeos que ainda não tem (e tira os que saíram). Ele confere ao abrir o QGIS e a cada 2 horas; não precisa atualizar o plugin. Enquanto baixa, o cartão do vídeo mostra <b>Baixando</b>; sem internet, aparece <b>Baixar agora</b>. Os vídeos ficam numa pasta do QGIS fora do plugin, então atualizar o plugin não apaga nenhum vídeo. <b>Abrir a pasta</b> mostra essa pasta.</p>
-{_cuidado("salvar, trocar, editar e apagar vídeos pede a senha dos vídeos. Assistir não pede.")}
-"""),
 
-("manutencao", "Para quem mantém o plugin", f"""
-<h2>Para quem mantém o plugin</h2>
-<p>Depois de qualquer mudança no código, rode no <b>Terminal Python</b> do QGIS (Complementos &gt; Terminal Python):</p>
-<p><code>from norteagro_uso_solo import testes_reconhecimento, testes_conferencia, testes_correcao, testes_interface</code><br>
-<code>testes_reconhecimento.main(); testes_conferencia.executar(); testes_correcao.executar(); testes_interface.executar(mostrar=False)</code></p>
-<p>Os testes usam catálogo e pastas temporários e devolvem o projeto aberto como estava. Todos devem terminar em OK.</p>
-<p>O histórico de mudanças está em Complementos &gt; Gerenciar e instalar complementos &gt; este plugin (Changelog) e o código no repositório do plugin (link "Repositório de código" na mesma tela). Os vídeos da ajuda ficam na pasta do QGIS <code>norteagro_videos</code> (lista em <code>videos.json</code>); o código da coluna de vídeos é <code>videos_ajuda.py</code>, igual nos dois plugins.</p>
-"""),
 
 ]
 

@@ -171,25 +171,6 @@ Clique em <b>Salvar</b>.</p>
 <code>support\\Preparar_PDF_Windows.cmd</code> ou <code>support\\Instalar_OCR_Windows.cmd</code> (pasta do plugin) e informe aqui o caminho mostrado no fim.</li>
 </ul>
 """),
-    ("videos", "Vídeos da ajuda: como salvar e apagar", f"""
-<h2>Vídeos da ajuda</h2>
-<p>Cada assunto desta ajuda tem um <b>lugar para vídeo</b>, na coluna da direita, ao lado do texto. Grave com o programa que
-preferir e salve aqui. Na lista, <b>●</b> verde = já tem vídeo; <b>○</b> = falta. Marque <b>Mostrar só os que faltam vídeo</b>
-para ver o que ainda falta gravar.</p>
-<ol>
-<li>Clique no assunto e em <b>Salvar vídeo no plugin...</b>; escolha o arquivo, confira o nome e escreva para que serve.</li>
-<li><b>Salvar no plugin</b> copia o vídeo para a <b>pasta dos vídeos</b> deste plugin, numa pasta só daquele assunto.
-Sem limite de tamanho ou duração; o original continua onde você gravou.</li>
-</ol>
-<p><b>▶ Assistir</b> toca o vídeo (se o formato não tocar dentro do QGIS, abre no player do Windows). <b>Trocar...</b> e
-<b>Editar</b> mudam o vídeo do assunto; <b>Mostrar na pasta</b> abre o Explorador com o arquivo selecionado.</p>
-<p><b>Apagar</b> tira o vídeo da ajuda e <b>apaga o arquivo da pasta dos vídeos</b> (pergunta antes e mostra o caminho).</p>
-<p><b>+ Mais um vídeo</b> acrescenta vídeos fora dos lugares: num assunto (embaixo do principal) ou em <b>Vídeos extras</b>.
-Os vídeos chegam aos colegas <b>pela internet</b>: quando quem cuida dos plugins publica vídeos, o QGIS de cada um
-avisa e baixa sozinho, em segundo plano, só os que ainda não tem (e tira os que saíram); confere ao abrir e a cada 2 horas.
-Eles ficam numa pasta do QGIS fora do plugin, então atualizar não apaga nenhum vídeo.</p>
-{_atencao("salvar, trocar, editar e apagar vídeos pede a senha dos vídeos. Assistir não pede.")}
-"""),
 ]
 
 HTML_EXTRAS = """

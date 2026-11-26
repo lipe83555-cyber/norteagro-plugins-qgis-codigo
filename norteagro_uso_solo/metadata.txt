@@ -1,7 +1,7 @@
 [general]
 name=Norte Agro - Uso do Solo
 description=Land use mapping for rural properties in Brazil (CAR/SICAR): standard layers, area table (Excel) and KML. / Uso do solo para o CAR: camadas padronizadas, Quadro de Áreas e KML.
-version=0.7.7
+version=0.7.8
 qgisMinimumVersion=3.22
 qgisMaximumVersion=4.99
 supportsQt6=True
@@ -17,6 +17,7 @@ icon=icon.png
 experimental=False
 deprecated=False
 changelog=
+    0.7.8 - Ajuda: saíram os assuntos que eram só para quem cuida do plugin e dos vídeos.
     0.7.7 - Autor atualizado. Nenhuma mudança no funcionamento do plugin.
     0.7.6 - Ajuste só para a verificação de segurança do repositório oficial do QGIS: arquivo .bandit marcando os falsos alarmes e comentários nas linhas da biblioteca de Excel (XlsxWriter) que o verificador confundia com senha. Nos testes de console, rodar testes_conferencia.py direto como script não dá mais erro. Nenhuma mudança no funcionamento do plugin.
     0.7.5 - Pronto para o repositório oficial do QGIS (licença GPL, descrição em inglês). Vídeos da Ajuda pela internet: assim que publicados, o QGIS avisa e baixa em segundo plano (ao abrir e a cada 2 horas), sem precisar de versão nova do plugin. Sem dados pessoais de fábrica.
